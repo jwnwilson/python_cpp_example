@@ -9,7 +9,8 @@ BOOST_INC = /usr/include
 BOOST_LIB = /usr/lib
  
 # compile mesh classes
-TARGET = hello_python
+#TARGET = hello_python
+TARGET = world
  
 $(TARGET).so: $(TARGET).o
 	g++ -shared -Wl,--export-dynamic $(TARGET).o -L$(BOOST_LIB) -lboost_python -L/usr/lib/python$(PYTHON_VERSION)/config -lpython$(PYTHON_VERSION) -o $(TARGET).so
