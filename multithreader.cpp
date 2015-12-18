@@ -8,7 +8,7 @@ using namespace std;
 
 void thread_process(int threadno, int runs){
 	for(int i=0;i<runs;i++){
-		cout << "Thread no: " +to_string(threadno)+ ", process :" + to_string(i);
+		cout << "Thread no: " +to_string(threadno)+ ", process :" + to_string(i) << endl;
 	}
 }
 
@@ -24,18 +24,13 @@ public:
 
     	vector<thread> thread_vector;
 
-    	/*for(int i =0;i<threads;i++){
-    		thread t = thread(thread_process, runs);
-    		thread_vector.push_back(t);
+    	for(int i =0;i<threads;i++){
+    		thread_vector.push_back(thread(thread_process, i, runs));
     	}
 
     	for(int i =0;i<threads;i++){
     		thread_vector[i].join();
-    	}*/
-
-    	thread t1 = thread(thread_process, 1, runs);
-
-    	t1.join();
+    	}
 
     	Py_END_ALLOW_THREADS
     }
